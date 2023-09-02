@@ -1,1 +1,2 @@
-console.log('hello world')
+const body = document.querySelector('body')
+body.innerText += '\nhello world from src/index.js'
