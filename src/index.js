@@ -1,2 +1,7 @@
-const body = document.querySelector('body')
-body.innerText += '\nhello world from src/index.js'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { App } from './App.jsx'
+
+const reactEntry = document.querySelector('#react-entry');
+
+ReactDOM.render(<App />, reactEntry)
