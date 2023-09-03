@@ -5,7 +5,7 @@ import {ImagePresenter} from "./components/ImagePresenter.jsx";
 
 export function App() {
     return <div>
-        <p>text in App</p>
+        <p>text in App with hot reload</p>
         <Child1 />
         <Child2 />
         <ImagePresenter />
