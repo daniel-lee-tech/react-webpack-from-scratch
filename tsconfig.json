@@ -3,5 +3,10 @@
     "jsx": "react",
     "esModuleInterop": true,
   },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "typings.d.ts"
+  ],
   "exclude": ["node_modules"]
 }

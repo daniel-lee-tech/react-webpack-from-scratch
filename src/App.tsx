@@ -1,13 +1,22 @@
 import React from 'react'
-import {Child1} from "./components/Child1";
-import {Child2} from "./components/Child2";
-import {ImagePresenter} from "./components/ImagePresenter";
+import {createBrowserRouter, RouterProvider, Route, createRoutesFromElements} from "react-router-dom";
+import {HomePage} from "./pages/HomePage";
+import {AboutPage} from "./pages/AboutPage";
+import {ImagePresenterPage} from "./pages/ImagePresenterPage";
+import {RootLayout} from "./layouts/RootLayout";
+
+const routes = createRoutesFromElements(
+    <Route path='/' element={<RootLayout />}>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/about' element={<AboutPage />} />
+        <Route path='/imagePresenter' element={<ImagePresenterPage />} />
+    </Route>
+)
+
+const router = createBrowserRouter(routes)
 
 export function App() {
-    return <div>
-        <p>text in App with hot reload</p>
-        <Child1 />
-        <Child2 />
-        <ImagePresenter defaultShow={false} />
-    </div>
+    return (
+        <RouterProvider router={router} />
+    )
 }
