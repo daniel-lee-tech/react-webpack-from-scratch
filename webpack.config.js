@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/index.tsx',
     output: {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist')
@@ -49,8 +49,17 @@ module.exports = {
                         loader: 'file-loader'
                     }
                 ]
+            },
+            {
+                test: /\.(ts|tsx)$/,
+                use: [
+                    'ts-loader'
+                ]
             }
         ],
+    },
+    resolve: {
+        extensions: ['.js', '.ts', '.jsx', '.tsx', '.svg', '.png', '.jpg', '.gif', '.css']
     },
     plugins: [
         // uses template and injects bundled js files into specified html
