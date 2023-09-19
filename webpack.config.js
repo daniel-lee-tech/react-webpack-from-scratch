@@ -2,10 +2,17 @@ const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-    entry: './src/index.tsx',
+    entry: {
+        index: './src/index.tsx',
+    },
     output: {
-        filename: 'main.js',
+        filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist')
+    },
+    optimization: {
+        splitChunks: {
+            chunks: 'all',
+        },
     },
     devServer: {
         static: './dist'
