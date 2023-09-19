@@ -6,3 +6,5 @@ export function ImagePresenterPage() {
         <ImagePresenter defaultShow={true} />
     </div>)
 }
+
+export default ImagePresenterPage;
